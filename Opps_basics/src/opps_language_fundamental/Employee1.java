@@ -1,6 +1,6 @@
 package opps_language_fundamental;
 
-public class Employee1 {
+public class Employee1  implements Comparable<Employee1>{
 	@Override
 	public String toString() {
 		return "Details: empid=" + this.empid + ", empname=" + empname + ", salary=" + salary + ", depno=" + depno ;
@@ -82,7 +82,20 @@ public class Employee1 {
 	 }
 	 @Override
 	 public boolean equals (Object ob) {
-		return  this.empid == ((Employee1)ob).empid;
+		if (ob instanceof Employee1)
+			return  this.empid == ((Employee1)ob).empid;
+		else
+			return false;
+	 }
+	 @Override 
+	 public int hashCode() {
+		 System.out.println("hash code is created of employeeid:"+this.empid+"and container is"+this.depno);
+		 return this.depno;
+	 }
+	 @Override
+	 public int compareTo(Employee1 e) {
+		 System.out.println("Compareto of employeeId: "+this.empid+"is Compred to empid: "+e.empid);
+		 return this.empid - e.empid;
 	 }
 	 
 }

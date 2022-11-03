@@ -1,8 +1,7 @@
 package custom_exception;
 
-import opps_language_fundamental.Employee1;
 
-public class Account {
+public class Account implements Comparable<Account> {
 	private String account_holder_name;
 	private int accno;
 	private double balance;
@@ -60,5 +59,16 @@ public class Account {
 	 public boolean equals (Object ob) {
 			return  this.accno == ((Account)ob).accno;
 		 }
+	@Override
+	public int hashCode() {
+		 System.out.println("hash code is created of holder name:"+this.account_holder_name+"and accountno is"+this.accno);
+		 return this.accno;
+		 }
+	@Override
+	 public int compareTo(Account e) {
+		 System.out.println("Compareto of : "+this.account_holder_name+"is Compred to empname: "+e.account_holder_name);
+		 return this.accno- e.accno;
+	 }
+	 
 
 }

@@ -1,5 +1,6 @@
 package collection1;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import custom_exception.Account;
@@ -18,7 +19,12 @@ public class ArrayListAccount {
 		Account d =new Account("Akash",110010,4000);
 		lst.add(d);
 		
-		System.out.println(lst);
+		//System.out.println(lst);
+		Iterator<Account> itr =lst.iterator();
+		 while(itr.hasNext()) {
+			 Account i =itr.next();
+			 System.out.println(i);
+			 }
 		System.out.println(lst.size());
 		System.out.println("Implimentation of ==:" +(c==d));
 		System.out.println("Implimentation of equals:"+c.equals(d));
